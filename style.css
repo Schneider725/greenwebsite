@@ -153,3 +153,31 @@ fieldset {
 .items:hover {
   text-decoration:underline;
 }
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height:50vh;
+  width:60vw;
+  border: 1px solid black;
+  text-align: center;
+  transform: translate(-50%,-150%);
+  transition: all 300ms ease-in;
+  opacity: 0%;;
+  background-color: white;
+}
+.modal.show {
+  opacity: 100%;
+  transform: translate(-50%, -50%);
+}
+.backdrop {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 0%;
+  transition: all 500ms ease-in;
+}
+.backdrop.show {
+  opacity: 50%;
+}
