@@ -76,8 +76,12 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 :root {
---main-background: #166534;
---secondary-background: #f7fee7;
+--main-background: #white;
+--secondary-background: #e5e5e5;
+--tertiary-background: white;
+}
+.header {
+  border-bottom: 1px black solid;
 }
 ul {
     display: flex;
@@ -85,7 +89,7 @@ ul {
     gap: 3rem;
     padding-bottom: 3rem;
     background-color: var(--main-background);
-    color: white;
+    color: black;
 }
 .logo {
     margin-right: auto;
@@ -97,26 +101,55 @@ ul {
     'one one two two'
     'one one three three';
     background-color: var(--secondary-background);
+    border-bottom: 1px black solid;
 }
 .section {
-    border:2px solid var(--main-background);
-    border-radius: 30px;
+    /* border:2px solid var(--main-background); */
+    border-radius: 10px;
     flex: 1;
     margin: 3rem;
+    box-shadow: 1px 1px 5px black;
+}
+.section > * {
+  padding: 3rem;
 }
 .one {
     grid-area: one;
-    background-color: white;
+    background-color: var(--tertiary-background);
 }
 .two {
     grid-area: two;
-    background-color: white;
+    background-color: var(--tertiary-background);
 }
 .three {
     grid-area: three;
-    background-color: white;
+    background-color: var(--tertiary-background);
 }
 .footer {
     height: 30vh;
     background-color: var(--main-background);
+}
+.items:hover {
+  cursor: pointer;
+}
+.form {
+  display: flex;
+}
+.row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+fieldset {
+  border: none;
+}
+.items {
+  transition: 300ms all ease-in;
+}
+.items:hover {
+  text-decoration:underline;
 }
