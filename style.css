@@ -187,6 +187,6 @@ li button {
   background-color: transparent;
   border: none;
 }
-input:invalid {
+input:invalid.submit-attempt{
   border: 2px solid red;
 }
