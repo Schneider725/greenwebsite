@@ -11,9 +11,9 @@
     <nav class="header">
         <ul>
             <li class="items logo" id="logo"><h1>Example Website</h1></li>
-            <li class="items settings" id="settings">Settings</li>
-            <li class="items orders" id="ordersr">Orders</li>
-            <li class="items logout" id="logout">Logout</li>
+            <li class="items settings" id="settings"><button>Settings</button></li>
+            <li class="items orders" id="orders"><button>Orders</button></li>
+            <li class="items logout" id="logout"><button>Logout</button></li>
         </ul>
     </nav>
     <body>
@@ -27,39 +27,42 @@
         <div class="section one"></div>
         <div class="section two"> 
             <div class="form">
-                <fieldset>
-                    <legend>Sign Up</legend>
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="first">First Name</label>
-                            <input type="text" id="first" name="first">
+                <form action="#">
+                    <fieldset>
+                        <legend>Sign Up</legend>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="first">First Name</label>
+                                <input type="text" id="first" name="first" required minlength="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="last">Last Name</label minlength="1">
+                                <input type="text" id="last" name="last" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="last">Last Name</label>
-                            <input type="text" id="last" name="last">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="first">Confirm Email</label>
+                                <input type="email" id="emailConfirm" name="emailConfirm" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" id="email" name="emaiil" >
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="first">Confirm Password</label>
+                                <input type="password" id="passwordConfirm" name="passwordConfirm" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="first">Confirm Email</label>
-                            <input type="text" id="emailConfirm" name="emailConfirm">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" >
-                        </div>
-                        <div class="form-group">
-                            <label for="first">Confirm Password</label>
-                            <input type="password" id="passwordConfirm" name="passwordConfirm">
-                        </div>
-                    </div>
-                </fieldset>
+                        <button id="submit">Submit</button>
+                    </fieldset>
+                </form>
             </div>
         </div>
         <div class="section three"></div>

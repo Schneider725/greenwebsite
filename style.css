@@ -165,9 +165,11 @@ fieldset {
   transition: all 300ms ease-in;
   opacity: 0%;;
   background-color: white;
+  display: none;
 }
 .modal.show {
   opacity: 100%;
+  display: block;
   transform: translate(-50%, -50%);
 }
 .backdrop {
@@ -180,4 +182,11 @@ fieldset {
 }
 .backdrop.show {
   opacity: 50%;
+}
+li button {
+  background-color: transparent;
+  border: none;
+}
+input:invalid {
+  border: 2px solid red;
 }
