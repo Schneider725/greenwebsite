@@ -44,9 +44,8 @@ function nameValidation(name) {
 }
 function emailValidation() {
   if (email.value != emailConfirm.value) {
-    email.setCustomValidity("Email addresses do not match");
-    email.reportValidity();
     emailConfirm.setCustomValidity("Email addresses do not match");
+    emailConfirm.reportValidity();
     return false;
   } else if (email.value == '' || emailConfirm == '') {
     email.setCustomValidity('All fields must be completed')
@@ -58,12 +57,16 @@ function emailValidation() {
   }
 }
 function passwordValidation() {
-  if (password.value != passwordConfirm.value || password.value == '') {
+  if (password.value != passwordConfirm.value) {
     password.setCustomValidity("passwords do not match");
     password.reportValidity();
     passwordConfirm.setCustomValidity("passwords do not match");
+    passwordConfirm.reportValidity();
     return false;
-  } else {
+  } else if(password.value == '' || passwordConfirm.value == '') {
+    passwordConfirm.setCustomValidity("Fill all fields");
+    passwordConfirm.reportValidity();
+  } else{
     password.setCustomValidity("");
     passwordConfirm.setCustomValidity("");
     return true;
@@ -79,3 +82,8 @@ function addSubmitClass() {
   passwordConfirm.classList.add("submit-attempt");
   submitAttempt = true;
 }
+
+emailConfirm.addEventListener("input", emailValidation);
+passwordConfirm.addEventListener("input", passwordValidation);
+first.addEventListener("input", () => checkFieldValidity(first));
+last.addEventListener("input", () => checkFieldValidity(last));
